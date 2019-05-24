@@ -8,16 +8,16 @@ import java.util.LinkedList;
 public class Loan {
 	double LoanAmount;
 	double InterestRate;
-	double termYear;
+	int termYear;
 	Date dueDate;
 	double AddPayments;
 	double futureValue;
-	double Compounds;
+	boolean Compounds;
 	
 	private LinkedList<Payment> loanPayments = new LinkedList<Payment>();
 
-	public Loan(double loanAmount, double interestRate, double termYear, Date dueDate, double addPayments,
-			double futureValue, double compounds, LinkedList<Payment> loanPayments) {
+	public Loan(double loanAmount, double interestRate, int termYear, Date dueDate, double addPayments,
+			double futureValue, boolean compounds) {
 		super();
 		LoanAmount = loanAmount;
 		InterestRate = interestRate;
@@ -70,7 +70,7 @@ public class Loan {
 		return termYear;
 	}
 
-	public void setTermYear(double termYear) {
+	public void setTermYear(int termYear) {
 		this.termYear = termYear;
 	}
 
@@ -98,11 +98,11 @@ public class Loan {
 		this.futureValue = futureValue;
 	}
 
-	public double getCompounds() {
+	public boolean getCompounds() {
 		return Compounds;
 	}
 
-	public void setCompounds(double compounds) {
+	public void setCompounds(boolean compounds) {
 		Compounds = compounds;
 	}
 
