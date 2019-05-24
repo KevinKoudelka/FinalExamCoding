@@ -1,5 +1,7 @@
 package pkgUT;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Date;
 
 import org.junit.Test;
@@ -20,6 +22,5 @@ public class LoanTest {
 		double futureValue = 0;
 		
 		Loan l = new Loan(loanAmount, interestRate, term, dueDate, extraPayment, futureValue, Compound);
-		
 	}
 }
