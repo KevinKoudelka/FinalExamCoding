@@ -82,13 +82,19 @@ public class Loan {
 		}
 	}
 	public String getTotPayment() {
-		int count = 0;
+		double sum = 0;
 		for (Payment p: LoanPayments) {
-			count++;
+			sum +=p.getIPMT();
 		}
-		return ""+ count;
+		return ""+ Math.abs((sum+LoanAmount));
 	}
-
+	public String getTotInterest() {
+		double sum = 0;
+		for (Payment p: LoanPayments) {
+			sum +=p.getIPMT();
+		}
+		return ""+ Math.abs((sum));
+	}
 	
 }
 

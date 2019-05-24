@@ -35,7 +35,8 @@ public class LoanCalcViewController implements Initializable   {
 	
 	@FXML
 	private DatePicker PaymentStartDate;
-	
+	@FXML
+	private Label lblTotalInterest;
 	
 	
 	@Override
@@ -69,6 +70,8 @@ public class LoanCalcViewController implements Initializable   {
 		
 		Loan myLoan = new Loan(dLoanAmount, interestRate, term, date, extraPayment, fV, Compound);
 		lbTotalPayments.setText(myLoan.getTotPayment());
+		lblTotalInterest.setText(myLoan.getTotInterest());
+		
 		System.out.println(localDate);
 	}
 }

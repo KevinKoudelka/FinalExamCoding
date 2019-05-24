@@ -35,5 +35,8 @@ public class Payment{
 	public void zeroBalance() {
 		Balance = 0;
 	}
+	public double getIPMT() {
+		return IPMT;
+	}
 	}
 
