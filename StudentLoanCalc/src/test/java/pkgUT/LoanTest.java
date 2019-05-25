@@ -1,6 +1,7 @@
 package pkgUT;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 
@@ -23,4 +24,22 @@ public class LoanTest {
 		
 		Loan l = new Loan(loanAmount, interestRate, term, dueDate, extraPayment, futureValue, Compound);
 	}
+	@Test
+	public void totalPrincipleTest() {
+		Loan l = new Loan(1000.0, 0.07,20, Loan.parseDate("2019-07-04"),0,0,false);
+		double total =l.getLoanAmount();
+		assertTrue(total == 1000.0);
+}
+	@Test
+	public void totalInterestTest() {
+		Loan l = new Loan(1000.0, 0.07,1, Loan.parseDate("2019-07-04"),0,0,false);
+		String total =l.getTotInterest();
+		assertEquals(total,"38.32");
+}
+	@Test
+	public void totalPaymentTest() {
+		Loan l = new Loan(1000.0, 0.07,1, Loan.parseDate("2019-07-04"),0,0,false);
+		String total =l.getTotPayment();
+		assertEquals(total,"1038.32");
+}
 }

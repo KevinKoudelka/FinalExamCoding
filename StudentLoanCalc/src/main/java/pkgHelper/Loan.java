@@ -86,14 +86,14 @@ public class Loan {
 		for (Payment p: LoanPayments) {
 			sum +=p.getIPMT();
 		}
-		return ""+ Math.abs((sum+LoanAmount));
+		return ""+ Math.round((sum+LoanAmount)*100.0)/100.0;
 	}
 	public String getTotInterest() {
 		double sum = 0;
 		for (Payment p: LoanPayments) {
 			sum +=p.getIPMT();
 		}
-		return ""+ Math.abs((sum));
+		return ""+ Math.round((sum*100.0))/100.0;
 	}
 	
 }
